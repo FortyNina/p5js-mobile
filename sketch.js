@@ -48,7 +48,7 @@ function setup() {
   pixelDensity(1);
 
     videoFeed = createCapture(VIDEO);
-    videoFeed.size(screenWidth, screenHeight);
+    videoFeed.size(screenWidth / 8, screenHeight /8);
 
 
     //cnv.parent('container');
@@ -58,5 +58,17 @@ function setup() {
 }
 
 function draw() {
+    background(backCol);
+    videoFeed.loadPixels();
+
+
+
+
+
+
+
+
+
+
 
 }
