@@ -41,23 +41,21 @@ var accentFourColorPicker;
 //-----------------------------------------------------------
 
 function setup() {
-  cv = createCanvas(screenWidth, screenHeight);
+  cv = createCanvas(displayWidth, displayHeight);
   cv.parent('container');
-  cv.elt.setAttribute('playsinline','');
 
   pixelDensity(1);
   videoFeed = createCapture(VIDEO);
-  videoFeed.size(screenWidth / 8, screenHeight / 8);
-  videoFeed.elt.setAttribute('playsinline', '');
-  videoFeed.parent('container');
+  videoFeed.size(displayWidth / 16, displayHeight / 16);
 
 
 
   videoFeed.hide();
   threshSlider = createSlider(0, 10000, 5000);
   threshSlider.position = (200, 500);
+  createP("");
   invertCheckBox = createCheckbox('Invert',false);
-
+createP("");
     backgroundColorPicker = createInput(RGBToHex(backCol[0],backCol[1],backCol[2]), 'color');
   accentOneColorPicker = createInput(RGBToHex(accentColOne[0],accentColOne[1],accentColOne[2]), 'color');
     accentTwoColorPicker = createInput(RGBToHex(accentColTwo[0],accentColTwo[1],accentColTwo[2]), 'color');
@@ -107,7 +105,7 @@ function draw() {
       var r = videoFeed.pixels[index + 0];
       var g = videoFeed.pixels[index + 1];
       var b = videoFeed.pixels[index + 2];
-      var brightMapped = (map(((r + g + b) / 3), 0, 255, 0, 8)) + .5;
+      var brightMapped = (map(((r + g + b) / 3), 0, 255, 0, 16)) + .5;
       var widthBasedOnMovement = 1;
       //get new width based on pixel comparisons
       //widthBasedOnMovement = whatever
@@ -155,7 +153,7 @@ function draw() {
         finalWidth = maxDotWidth;
       }
 
-      ellipse(x * 8, y * 8, finalWidth, finalWidth);
+      ellipse(x * 16, y * 16, finalWidth, finalWidth);
     }
   }
   prevFrame = videoFeed.pixels;
