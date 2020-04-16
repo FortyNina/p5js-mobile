@@ -44,7 +44,7 @@ var accentFourColorPicker;
 function setup() {
 
     createCanvas(screenWidth, screenHeight);
-    pixelDesnity(1);
+    //pixelDesnity(1);
     videoFeed = createCapture(VIDEO);
     videoFeed.size(screenWidth/8, screenHeight/8);
 
