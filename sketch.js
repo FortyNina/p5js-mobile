@@ -4,7 +4,7 @@ var colorTravelSpeed = .05; //how quickly the color lerps
 var prevFrame;
 var movementThreshold = 4000;
 var maxDotWidth = 15;
-var invert = true;
+var invert = false;
 
 var screenWidth = 600;
 var screenHeight = 450;
