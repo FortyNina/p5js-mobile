@@ -45,6 +45,7 @@ function setup() {
 
 
   cnv = createCanvas(screenWidth, screenHeight);
+  pixelDensity(1);
 
     videoFeed = createCapture(VIDEO);
     videoFeed.size(screenWidth, screenHeight);
