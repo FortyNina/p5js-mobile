@@ -44,7 +44,27 @@ function setup() {
   createCanvas(screenWidth, screenHeight);
   pixelDensity(1);
   videoFeed = createCapture(VIDEO);
-  videoFeed.size(width / 8, height / 8);
+  videoFeed.size(screenWidth / 8, screenHeight / 8);
+
+
+  // videoFeed = createCapture({
+  //     audio: false,
+  //     video: {
+  //         width: width / 8,
+  //         height: height / 8
+  //     }
+  // }, function() {
+  //     console.log('capture ready.')
+  // });
+  // videoFeed.elt.setAttribute('playsinline', '');
+  // videoFeed.size(width, height);
+  // videoFeed.parent('container');
+  // cnv = createCanvas(width, height);
+  // cnv.parent('container');
+
+
+
+
   //videoFeed.hide();
   threshSlider = createSlider(0, 10000, 5000);
   invertCheckBox = createCheckbox('Invert',false);
