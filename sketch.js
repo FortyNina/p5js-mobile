@@ -41,32 +41,21 @@ var accentFourColorPicker;
 //-----------------------------------------------------------
 
 function setup() {
-  createCanvas(screenWidth, screenHeight);
+  cv = createCanvas(screenWidth, screenHeight);
+  cv.parent('container');
+  cv.elt.setAttribute('playsinline','');
+
   pixelDensity(1);
   videoFeed = createCapture(VIDEO);
   videoFeed.size(screenWidth / 8, screenHeight / 8);
-
-
-  // videoFeed = createCapture({
-  //     audio: false,
-  //     video: {
-  //         width: width / 8,
-  //         height: height / 8
-  //     }
-  // }, function() {
-  //     console.log('capture ready.')
-  // });
-  // videoFeed.elt.setAttribute('playsinline', '');
-  // videoFeed.size(width, height);
-  // videoFeed.parent('container');
-  // cnv = createCanvas(width, height);
-  // cnv.parent('container');
+  videoFeed.elt.setAttribute('playsinline', '');
+  videoFeed.parent('container');
 
 
 
-
-  //videoFeed.hide();
+  videoFeed.hide();
   threshSlider = createSlider(0, 10000, 5000);
+  threshSlider.position = (200, 500);
   invertCheckBox = createCheckbox('Invert',false);
 
     backgroundColorPicker = createInput(RGBToHex(backCol[0],backCol[1],backCol[2]), 'color');
