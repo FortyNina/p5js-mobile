@@ -43,10 +43,15 @@ var accentFourColorPicker;
 
 function setup() {
 
-    createCanvas(screenWidth, screenHeight);
-    //pixelDesnity(1);
+
+
     videoFeed = createCapture(VIDEO);
     videoFeed.size(screenWidth, screenHeight);
+
+
+    cnv = createCanvas(w, h);
+    //cnv.parent('container');
+
 
 
 }
