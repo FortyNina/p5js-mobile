@@ -5,6 +5,7 @@ var prevFrame;
 var movementThreshold = 4000;
 var maxDotWidth = 15;
 var invert = false;
+var pixScale = 16;
 
 var screenWidth = 600;
 var screenHeight = 450;
@@ -46,7 +47,7 @@ function setup() {
 
   pixelDensity(1);
   videoFeed = createCapture(VIDEO);
-  videoFeed.size(displayWidth / 16, displayHeight / 16);
+  videoFeed.size(displayWidth / pixScale, displayHeight / pixScale);
 
 
 
@@ -105,7 +106,7 @@ function draw() {
       var r = videoFeed.pixels[index + 0];
       var g = videoFeed.pixels[index + 1];
       var b = videoFeed.pixels[index + 2];
-      var brightMapped = (map(((r + g + b) / 3), 0, 255, 0, 16)) + .5;
+      var brightMapped = (map(((r + g + b) / 3), 0, 255, 0, pixScale)) + .5;
       var widthBasedOnMovement = 1;
       //get new width based on pixel comparisons
       //widthBasedOnMovement = whatever
@@ -153,7 +154,7 @@ function draw() {
         finalWidth = maxDotWidth;
       }
 
-      ellipse(x * 16, y * 16, finalWidth, finalWidth);
+      ellipse(x * pixScale, y * pixScale, finalWidth, finalWidth);
     }
   }
   prevFrame = videoFeed.pixels;
