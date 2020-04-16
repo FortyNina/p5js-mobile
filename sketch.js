@@ -49,7 +49,7 @@ function setup() {
     videoFeed.size(screenWidth, screenHeight);
 
 
-    cnv = createCanvas(w, h);
+    cnv = createCanvas(screenWidth, screenHeight);
     //cnv.parent('container');
 
 
