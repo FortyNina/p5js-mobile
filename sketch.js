@@ -1,5 +1,5 @@
 
-var capture;
+var videoFeed;
 var tracker;
 
 var rhi, ghi, bhi;
@@ -10,7 +10,7 @@ var rlo, glo, blo;
 function setup() {
     var w = 640,
         h = 480;
-    capture = createCapture({
+    videoFeed = createCapture({
         audio: false,
         video: {
             width: w,
@@ -19,9 +19,9 @@ function setup() {
     }, function() {
         console.log('capture ready.')
     });
-    capture.elt.setAttribute('playsinline', '');
-    capture.size(w, h);
-    capture.parent('container');
+    videoFeed.elt.setAttribute('playsinline', '');
+    videoFeed.size(w, h);
+    videoFeed.parent('container');
     cnv = createCanvas(w, h);
     cnv.parent('container');
 
