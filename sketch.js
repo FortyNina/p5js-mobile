@@ -44,12 +44,12 @@ var accentFourColorPicker;
 function setup() {
 
 
+  cnv = createCanvas(screenWidth, screenHeight);
 
     videoFeed = createCapture(VIDEO);
     videoFeed.size(screenWidth, screenHeight);
 
 
-    cnv = createCanvas(screenWidth, screenHeight);
     //cnv.parent('container');
 
 
