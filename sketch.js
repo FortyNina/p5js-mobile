@@ -26,7 +26,7 @@ function setup() {
     // videoFeed.size(w, h);
     // videoFeed.parent('container');
     cnv = createCanvas(w, h);
-    cnv.parent('container');
+    //cnv.parent('container');
 
 
 
